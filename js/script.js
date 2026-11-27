@@ -1,10 +1,20 @@
-const address = { street: "Lange Nieuwstraat", number: 14, city: "Antwerpen" };
-const person  = { firstName: "Lena", lastName: "Peeters", age: 21 };
+const cart = {
+    customer: "Lena",
+    order: { product: "Koptelefoon", price: 100 }
+};
 
-const adressCopy = {...address, number:99};
+const shallowCopy = {...cart, customer: `Bram`};
 
-const contact = {...address,...person};
+console.log(`Klant origineel:`, cart.customer);
+console.log(`Klant kopie:`, shallowCopy.customer);
 
-console.log(`Kopie:`,adressCopy);
-console.log(`Contact:`, contact);
-console.log(`Origineel ongewijzigd:`, address);
+shallowCopy.order.price = 80;
+console.log(`Prijs origineel:`, cart.order.price);
+console.log(`Prijs kopie:`, shallowCopy.order.price);
+
+const deepCopy = structuredClone(cart);
+deepCopy.order.price = 50;
+console.log(`Prijs origineel:${cart.order.price}`);
+console.log(`Pijs deep copy:` + deepCopy.order.price);
+
+
