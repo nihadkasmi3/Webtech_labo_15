@@ -1,10 +1,16 @@
-function printTextBox(text){
-    const length = text.length + 4;
-     console.log("/" + "*".repeat(length) + "\\");
-     console.log("| " + text + " |");
-     console.log("\\" + "*".repeat(length) + "/");
+let numbers = [1, 2 , 4 , 5];
+
+function sum(numbers){
+    console.log(numbers);
+
+    let total = 0;
+
+for (let index = 0; index < numbers.length; index++) {
+    total = total + numbers[index];
 }
-printTextBox("HELLO WORLD");
-printTextBox("HALLO WERELD");
-printTextBox("HOLA MUNDO");
+return total;
+
+}
+let result = sum(numbers);
+console.log(result);
 
