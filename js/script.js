@@ -1,44 +1,18 @@
-const students = [
-    { name: "An",   grades: [14, 16, 12, 18] },
-    { name: "Ben",  grades: [9,   7, 11,  8] },
-    { name: "Cas",  grades: [15, 17, 14, 16] },
-    { name: "Dina", grades: [6,   8,  5,  9] },
-    { name: "Eli",  grades: [13, 11, 15, 12] },
-];
+const classicMemes   = ["Distracted Boyfriend", "Drake Hotline Bling", "Two Buttons"];
+const deepFriedMemes = ["Big Chungus", "Ugandan Knuckles", "Stonks"];
+const currentMemes   = ["He's Right You Know", "This is Fine", "Woman Yelling at Cat"];
 
-function calculateAverage(grades){
-    let total = 0;
-
-    for (let index = 0; index < grades.length; index++) {
-        total = total + grades[index];
+function combineMemes(...memeCategories) {
+    let combined = [];
+     for (const category of memeCategories) {
+        combined = [...combined, ...category];
     }
-    let average = total / grades.length;
-    return average.toFixed(2);
+    return combined;
 }
 
-for (let index = 0; index < students.length; index++) {
-    let average = calculateAverage(students[index].grades);
+const fullMemeList = combineMemes(classicMemes, deepFriedMemes, currentMemes);
+console.log("Volledige memelijst:", fullMemeList);
 
-    console.log(`${students[index].name}: ${average}`);
-}
-
-function getPassingStudents(students) {
-    let passingStudents = [];
-
-    for (let index = 0; index < students.length; index++) {
-        let average = calculateAverage(students[index].grades);
-
-        if (average >= 10) {
-            passingStudents.push(students[index]);
-        }
-    }
-
-    return passingStudents;
-}
-
-let passingStudents = getPassingStudents(students);
-console.log(`Geslaagde studenten:`);
-
-for (let index = 0; index < passingStudents.length; index++) {
-    console.log(`${passingStudents[index].name} is geslaagd`);
-}
+const extendedMemeList = [...fullMemeList, "Giga Chad", "NPC Streamer"];
+console.log("Uitgebreide memelijst:", extendedMemeList);
+console.log("Originele lijst ongewijzigd:", fullMemeList);
