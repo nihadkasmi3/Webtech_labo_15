@@ -1,20 +1,47 @@
-const cart = {
-    customer: "Lena",
-    order: { product: "Koptelefoon", price: 100 }
+function number() {
+    return 20;
+}
+console.log(number());
+
+function text() {
+    return "Hallo";
+}
+console.log(text());
+
+function vraag() {
+    return true;
+}
+console.log(vraag());
+
+function printText() {
+    console.log(`Dit is een tekst`);
+}
+console.log(printText());
+
+function firstNumber() {
+        return 5;
+}
+console.log(firstNumber());
+
+function secondNumber() {
+        return 9;
+}
+console.log(secondNumber());
+
+function sumOfNumbers(firstNumber, secondNumber) {
+     sumOfNumbers = firstNumber + secondNumber;
+}
+Console.log(firstNumber + secondNumber);
+Console.log(sumOfNumbers());
+
+const sumOfNumbersArrow = (firstNumber, secondNumber) => {
+    console.log(firstNumber + secondNumber);
 };
 
-const shallowCopy = {...cart, customer: `Bram`};
+const double = number => number * 2
 
-console.log(`Klant origineel:`, cart.customer);
-console.log(`Klant kopie:`, shallowCopy.customer);
-
-shallowCopy.order.price = 80;
-console.log(`Prijs origineel:`, cart.order.price);
-console.log(`Prijs kopie:`, shallowCopy.order.price);
-
-const deepCopy = structuredClone(cart);
-deepCopy.order.price = 50;
-console.log(`Prijs origineel:${cart.order.price}`);
-console.log(`Pijs deep copy:` + deepCopy.order.price);
-
+function multiply(number, factor = 2) {
+    return number * factor;
+}
+console.log(multiply(5, 10));
 
